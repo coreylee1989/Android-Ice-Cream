@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/content_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.example.cl1434.lee_ice_cream.MainActivity"
+    tools:showIn="@layout/activity_main">
+
+
+
+    <Button
+        android:text="The Works"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/theWorksButton"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:onClick="processTheWorks" />
+
+    <Button
+        android:text="Order"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/orderButton"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:onClick="processOrder" />
+
+    <Button
+        android:text="Reset"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/resetButton"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:onClick="processReset" />
+
+    <TextView
+        android:text="Ice Cream Sundae Maker"
+        android:layout_height="wrap_content"
+        android:id="@+id/infoView"
+        android:textSize="30sp"
+        android:textAlignment="center"
+        android:layout_width="wrap_content"
+        android:textColor="@color/colorAccent"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="10dp" />
+
+    <EditText
+        android:id="@+id/orderTotalTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/infoView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        android:text="$3.14"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        android:textStyle="normal|bold" />
+
+    <SeekBar
+        android:id="@+id/seekBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/resetButton"
+        android:layout_marginBottom="19dp"
+        android:layout_toStartOf="@+id/orderButton"
+        android:max="3"
+        android:progress="1" />
+
+    <CheckBox
+        android:id="@+id/gummyBearCheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/seekBar"
+        android:layout_alignEnd="@+id/resetButton"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="28dp"
+        android:layout_marginEnd="42dp"
+        android:onClick="processCheckBoxChanged"
+        android:text="Gummy Bears" />
+
+    <CheckBox
+        android:id="@+id/marshmallowsCheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/gummyBearCheckBox"
+        android:layout_alignBottom="@+id/gummyBearCheckBox"
+        android:layout_alignParentEnd="true"
+        android:layout_alignStart="@+id/resetButton"
+        android:layout_marginStart="45dp"
+        android:onClick="processCheckBoxChanged"
+        android:text="Marshmallows" />
+
+    <CheckBox
+        android:id="@+id/strawberriesCheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/gummyBearCheckBox"
+        android:layout_alignEnd="@+id/gummyBearCheckBox"
+        android:layout_alignParentStart="true"
+        android:onClick="processCheckBoxChanged"
+        android:text="Strawberries" />
+
+    <CheckBox
+        android:id="@+id/almondsCheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/strawberriesCheckBox"
+        android:layout_alignEnd="@+id/strawberriesCheckBox"
+        android:layout_alignParentStart="true"
+        android:onClick="processCheckBoxChanged"
+        android:text="Almonds" />
+
+    <CheckBox
+        android:id="@+id/peanutsCheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/almondsCheckBox"
+        android:layout_alignEnd="@+id/almondsCheckBox"
+        android:layout_alignParentStart="true"
+        android:onClick="processCheckBoxChanged"
+        android:text="Peanuts" />
+
+    <CheckBox
+        android:id="@+id/mmCheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/almondsCheckBox"
+        android:layout_alignParentEnd="true"
+        android:layout_toEndOf="@+id/almondsCheckBox"
+        android:onClick="processCheckBoxChanged"
+        android:text="@string/m_m_s" />
+
+    <CheckBox
+        android:id="@+id/browniesCheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/mmCheckBox"
+        android:layout_toEndOf="@+id/strawberriesCheckBox"
+        android:onClick="processCheckBoxChanged"
+        android:text="Brownies" />
+
+    <CheckBox
+        android:id="@+id/oreosCheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/browniesCheckBox"
+        android:layout_toEndOf="@+id/strawberriesCheckBox"
+        android:onClick="processCheckBoxChanged"
+        android:text="Oreos" />
+
+    <TextView
+        android:id="@+id/seekBarTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/seekBar"
+        android:layout_alignParentEnd="true"
+        android:text="1 oz."
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/hotFudgeTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/seekBar"
+        android:layout_centerHorizontal="true"
+        android:text="Hot Fudge"
+        android:textColor="@android:color/black"
+        android:textSize="18sp" />
+
+    <Spinner
+        android:id="@+id/iceCreamSpinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/marshmallowsCheckBox"
+        android:layout_below="@+id/orderTotalTextView"
+        android:layout_marginTop="13dp"
+        android:entries="@array/iceCreamSpinnerItems" />
+
+    <Spinner
+        android:id="@+id/sizeSpinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/iceCreamSpinner"
+        android:layout_below="@+id/iceCreamSpinner"
+        android:layout_marginTop="17dp"
+        android:entries="@array/sizeSpinnerItems" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/sizeSpinner"
+        android:layout_alignParentStart="true"
+        android:layout_alignTop="@+id/iceCreamSpinner"
+        android:layout_toStartOf="@+id/iceCreamSpinner"
+        android:text="Ice Cream:"
+        android:textAlignment="textEnd"
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/sizeSpinner"
+        android:layout_alignParentStart="true"
+        android:layout_alignTop="@+id/sizeSpinner"
+        android:layout_toStartOf="@+id/sizeSpinner"
+        android:text="Size:"
+        android:textAlignment="textEnd"
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+</RelativeLayout>
